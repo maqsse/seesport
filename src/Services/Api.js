@@ -10,7 +10,7 @@ const instance = axios.create({ baseURL: "http://localhost:3000/user" });
  */
 export const getUserInfos = async (id) => {
 	try {
-		if (isMocked === "true") {
+		if (isMocked === "true") { 
 			if (id === 12) {
 				const res = DataMock.USER_MAIN_DATA[0];
 				return res.data;
