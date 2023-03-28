@@ -1,13 +1,14 @@
 header {
-  width: 100%;
-  height: 10%;
-  position: relative;
+  display: flex;
 }
 .communaute{
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
   margin-right: 20px;
 }
-span {
-  color: rgba(255, 255, 255, 1);
+.span_upbar {
+  color: #fff;
   text-decoration: none;
   font-size: 24px;
 }

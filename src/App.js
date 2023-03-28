@@ -1,22 +1,30 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Accueil from './page/Accueil.js'
-
+import './App.css'
 
 function App() {
+
+  
   return (
-    <div>
+    
+    <div className='main'>
       
       <BrowserRouter>
-  <Routes>
-<Route path="/" element={<Accueil />} />
-<Route path="/accueil" element={<Accueil />} />
-</Routes>
-</BrowserRouter>
+      
+        <Routes>
+          <Route exact path="/" element={<Accueil />}/>
+          <Route path="/user/12" element={<Accueil />} />
+          <Route path='*' element={<Navigate to='/user/12' />} />
 
+          <Route path="/accueil" element={<Accueil />} />
+        </Routes>
+        
+      </BrowserRouter>
+     
     </div>
-    
-  );
+     
+  )
 }
 
 export default App;

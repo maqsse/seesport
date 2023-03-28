@@ -14,7 +14,7 @@ const Sidebar = () => {
         <div className='side'><img src={cyclisme} alt='cyclisme' className='img_sidebar'/></div>
         <div className='side'><img src={musculation} alt='musculation' className='img_sidebar'/></div>
       </nav>
-      <p> Copiryght, SportSee 2020 </p>
+      <p className='p_sidebar'> Copiryght, SportSee 2020 </p>
     </aside>
   )
 }

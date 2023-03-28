@@ -1,0 +1,70 @@
+.dashboard{
+   margin: 5% 0 0 10%;
+  padding-left: 30px;
+   
+}
+
+
+ h1{
+  font-size: 48px;
+  margin: 20px 0 5px;
+  
+ }   
+ .span_accueil{
+  color: red;
+  font-size: 48px;
+ }
+ .p_accueil{
+  font-size: 18px;
+    margin: 0 0 30px;
+}
+ .separate_stats{
+  display: flex;
+    flex-direction: row;
+    height: 70vh;
+    margin: 0 0 0 10%;
+ }
+ .stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+ }
+ .activity{
+  height: 280px;
+    width: 1000px;
+    background-color: #fbfbfb;
+    padding: 50px 20px 0;
+    position: relative;
+ }
+ .graph_objectif{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+ }
+ 
+ .perfscore_h3{
+  bottom: 0;
+    left: 20px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+ .graph-objectif{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+ }
+ h2{
+  font-size: 18px;
+  font-weight: 400;
+ }
+ .nom{
+  color: red;
+ }
+ .welcome{
+  margin: 100px;
+ }

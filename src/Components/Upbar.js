@@ -7,9 +7,9 @@ const Upbar = () => {
     <header>
        <nav className='nav_upbar'>
       <img src={logo} alt='logo' className='img_upbar'/>
-        <span> Accueil </span>
-        <span> Profil </span>
-        <span> Réglage </span>
+        <span className='span_upbar'> Accueil </span>
+        <span className='span_upbar'> Profil </span>
+        <span className='span_upbar'> Réglage </span>
         <span className='communaute'> Communauté </span>
       </nav>
     

@@ -1,0 +1,9 @@
+.radar{
+  height: 300px;
+  width: 300px;
+  background-color: #282d30;
+    color: #fff;
+    position: relative;
+    top: 85px;
+    right: 70px;
+}
