@@ -1,15 +1,22 @@
 .score_wrap{
   width: 300px;
   height: 300px;
-  margin-right: 20px;
-  position: relative;
   background-color: #fbfbfb;
+  left: 50px;
+  margin-left: 20px;
 }
-.score_wrap h3{
-  bottom: 0;
-    left: 20px;
+ .perfscore_h3{
+  position: relative;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    line-height: 24px;
+    color: rgb(32, 37, 58);
+    font-weight: 700;
     margin: 0;
-    position: absolute;
-    right: 0;
-    top: 10px;
+}
+.custom-legend-score{
+  position: absolute;
+  bottom: 80px;
+  left: 100px;
 }

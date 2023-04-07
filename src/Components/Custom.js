@@ -1,4 +1,12 @@
-import '../styles/custom.css'
+import '../styles/custom.css' 
+import PropTypes from 'prop-types';
+
+  
+/** create a custom tooltype for the user activity barChart
+ * @param  {bool} active
+ * @param  {array} payload
+ * @return {JSX}
+ */
 
 export const CustomTooltipActivity = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -33,3 +41,8 @@ export function CustomLegendScore (payload) {
     </div>
   )
 }
+
+CustomTooltipActivity.propTypes = {
+	active: PropTypes.bool,
+	payload: PropTypes.array,
+};

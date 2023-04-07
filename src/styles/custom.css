@@ -8,3 +8,8 @@
 .custom-legend-score-objectif {
   text-align: center;
 }
+.custom-tooltip-objectif {
+  background-color: white;
+  color: black;
+  padding: 1px 10px;
+}

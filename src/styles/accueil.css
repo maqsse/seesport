@@ -1,3 +1,6 @@
+.principale{
+  width: 90%;
+}
 .dashboard{
    margin: 5% 0 0 10%;
   padding-left: 30px;
@@ -29,29 +32,14 @@
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
- }
+ } 
  .activity{
   height: 280px;
-    width: 1000px;
     background-color: #fbfbfb;
     padding: 50px 20px 0;
     position: relative;
  }
- .graph_objectif{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
- }
  
- .perfscore_h3{
-  bottom: 0;
-    left: 20px;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 10px;
-}
  .graph-objectif{
   display: flex;
   flex-direction: row;
@@ -66,5 +54,10 @@
   color: red;
  }
  .welcome{
-  margin: 100px;
+  margin: 10% 0 0 10%;
+ }
+ .information-stat{
+  display: flex;
+    flex-direction: column;
+    margin-left: 10px;
  }

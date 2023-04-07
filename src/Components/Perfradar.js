@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react'
 import { Legend, PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts'
 import '../styles/perfradar.css'
 
+/**
+ * Render a RadarChart with user performance data
+ * @return {JSX}
+ */
+
 const Perfradar = () => {
   const [performance, setPerformance] = useState([])
 
