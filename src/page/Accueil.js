@@ -16,6 +16,9 @@ import '../styles/accueil.css'
 import '../styles/upbar.css'
 import '../styles/sidebar.css'
 
+/**Render the dashboard
+ * @return {JSX}
+ */
 
 function Accueil() {
   const [information, setInformation] = useState([])
@@ -41,50 +44,60 @@ function Accueil() {
   }
 
 
-  return (
-    connexionBdd
-      ? (
-
-        
-    <div className='principal'>
-       <Upbar />
-        
+  return connexionBdd ? (
+    <div className="principal">
+      <Upbar />
       <Sidebar />
       <div className="dashboard">
-       
-
         <div className="welcome">
-        <h1> Bonjour <span className='nom'> {informationUser?.firstName} </span> </h1>
+          <h1>
+            {' '}
+            Bonjour <span className="nom">
+              {' '}
+              {informationUser?.firstName}{' '}
+            </span>{' '}
+          </h1>
           <h2> Félicitation ! Vous avez explosé vos objectifs hier 👏 </h2>
-      </div>
-            <div className="separate_stats">
-        <div className="stats">
-          <div className="activity_graph">
-            <Activity />
-          </div> 
-            
-          <div className='graph-objectif'>
-                  <Objectif />
-                <Perfradar />
-                <Perfscore/>
-                
-                </div>  
-                
         </div>
-        <div className='information-stat'>
-              <Information icone={calorie} nbGramme={information?.calorieCount} type='Calories' />
-              <Information icone={proteine} nbGramme={information?.proteinCount} type='Proteines' />
-              <Information icone={glucide} nbGramme={information?.carbohydrateCount} type='Glucides' />
-              <Information icone={lipide} nbGramme={information?.lipidCount} type='Lipides' />
-               
+        <div className="separate_stats">
+          <div className="stats">
+            <div className="activity_graph">
+              <Activity />
             </div>
+
+            <div className="graph-objectif">
+              <Objectif />
+              <Perfradar />
+              <Perfscore />
+            </div>
+          </div>
+          <div className="information-stat">
+            <Information
+              icone={calorie}
+              nbGramme={information?.calorieCount}
+              type="Calories"
+            />
+            <Information
+              icone={proteine}
+              nbGramme={information?.proteinCount}
+              type="Proteines"
+            />
+            <Information
+              icone={glucide}
+              nbGramme={information?.carbohydrateCount}
+              type="Glucides"
+            />
+            <Information
+              icone={lipide}
+              nbGramme={information?.lipidCount}
+              type="Lipides"
+            />
+          </div>
+        </div>
       </div>
-      
     </div>
-      
-    </div>
-  )
-  : (<Error />)
+  ) : (
+    <Error />
   )
 }
 

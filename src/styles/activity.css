@@ -9,3 +9,8 @@ h3{
     position: absolute;
     top: 20px
 }
+.recharts-tooltip-wrapper{
+  background-color: red;
+  color: white;
+  border-color: white;
+}

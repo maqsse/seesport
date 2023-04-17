@@ -25,9 +25,9 @@ const Perfradar = () => {
   return (
     <div className='radar'>
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart outerRadius={50} width='50%' height='50%' data={performance}>
+        <RadarChart outerRadius={70} width='50%' height='50%' data={performance}>
           <PolarGrid />
-          <PolarAngleAxis dataKey='kind' stroke='#FFFFFF' fontSize={14} tickLine={false} />
+          <PolarAngleAxis dataKey='kind' stroke='#FFFFFF' fontSize={16} tickLine={false} />
           <Radar dataKey='value' stroke='#E60000' fill='#E60000' fillOpacity={0.7} legendType='none' />
           <Legend />
         </RadarChart>

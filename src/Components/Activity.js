@@ -21,7 +21,7 @@ function Activity () {
   async function fetchActivityUser () {
     const info = await fetchActivity()
     setActivity(info)
-  }
+  } 
   return (
     <div className='activity'>
       <h3> Acitivité quotidienne </h3>
