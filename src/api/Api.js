@@ -4,7 +4,7 @@ const [lienSite, search] = window.location.href.split('?')
 const id = parseInt(lienSite.split('/')[4]) || 12
 const mocked = search === 'mocked'
 
-const server = 'https://seesport.netlify.app/user/12'
+const server = 'https://seesport.netlify.app'
 
 export async function fetchInformation () {
   if (mocked) {
