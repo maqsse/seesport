@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/seesport/static/css/main.fb8a4696.css",
+    "main.js": "/seesport/static/js/main.3b65a4a9.js",
+    "static/js/787.22ce2411.chunk.js": "/seesport/static/js/787.22ce2411.chunk.js",
+    "static/media/logo.png": "/seesport/static/media/logo.0e8d31d49e37756d280a.png",
+    "index.html": "/seesport/index.html",
+    "main.fb8a4696.css.map": "/seesport/static/css/main.fb8a4696.css.map",
+    "main.3b65a4a9.js.map": "/seesport/static/js/main.3b65a4a9.js.map",
+    "787.22ce2411.chunk.js.map": "/seesport/static/js/787.22ce2411.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb8a4696.css",
+    "static/js/main.3b65a4a9.js"
+  ]
+}
