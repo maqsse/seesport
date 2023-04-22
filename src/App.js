@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Accueil />}/>
           <Route path="/user/12" element={<Accueil />} />
+            <Route path='/user/:id' element={<Accueil />} />
           <Route path='*' element={<Navigate to='/user/12' />} />
 
           <Route path="/accueil" element={<Accueil />} />
