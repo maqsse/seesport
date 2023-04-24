@@ -22,4 +22,4 @@ Create React App project : npm init react-app my-app
 
 Place yourself into the new React project folder, then install dependencies : npm install
 
-Launch frontend (port 3001): npm start
+Launch frontend (port 3000): npm start
