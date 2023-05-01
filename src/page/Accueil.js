@@ -11,7 +11,7 @@ import Activity from '../components/Activity'
 import Objectif from '../components/Objectif'
 import Perfradar from '../components/Perfradar'
 import Perfscore from '../components/Perfscore'
-import Error from '../components/Error'
+import Erreur from '../page/Erreur'
 import '../styles/accueil.css'
 import '../styles/upbar.css'
 import '../styles/sidebar.css'
@@ -97,7 +97,7 @@ function Accueil() {
       </div>
     </div>
   ) : (
-    <Error />
+    <Erreur />
   )
 }
 
