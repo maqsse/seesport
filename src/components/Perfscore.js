@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchInformationScore } from '../api/Api'
+import { fetchInformationScore } from '../api/callApi'
 import { CustomLegendScore } from './Custom'
 import { useState, useEffect } from 'react'
 import { RadialBar, RadialBarChart, Legend, ResponsiveContainer } from 'recharts'
@@ -29,7 +29,8 @@ const Perfscore = () => {
 
   async function fetchScoreUser () {
     const info = await fetchInformationScore()
-    setScoreUser(info)
+    const dataFormated = formatScore(info)
+    setScoreUser(dataFormated)
   }
 
 /**
@@ -41,6 +42,27 @@ const Perfscore = () => {
  * @param {string} dataOriginal.data.userId - The user ID.
  * @returns {Array} - The formatted score data.
  */
+ 
+ function formatScore (dataOriginal) {
+  const { data } = dataOriginal
+  let score
+  if (data.todayScore === undefined) {
+    score = data.score
+  } else {
+    score = data.todayScore
+  }
+  const newData = []
+  newData.push({
+    userId: data.userId,
+    todayScore: score * 100
+  })
+  newData.push({
+    userId: data.userId,
+    todayScore: 100,
+    fill: '#ffffff00'
+  })
+  return newData
+}
 
   return (
         <div className='score_wrap'>
