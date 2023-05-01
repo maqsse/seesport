@@ -7,6 +7,7 @@ import '../styles/perfradar.css'
 /**
  * Render a RadarChart with user performance data
  * @return {JSX}
+ * @param  {array} performance
  */
 
 const Perfradar = () => {
@@ -16,11 +17,23 @@ const Perfradar = () => {
     fetchPerformanceUser()
   }, [])
 
+  /**
+Fetches performance data and sets it in the state.
+*/
+  
   async function fetchPerformanceUser () {
     const data = await fetchPerformance()
     setPerformance(data)
   }
   if (performance.length === 0) return (<></>)
+                                        
+  /**
+ * Formats performance data.
+ * @param {Object} dataOriginal - The original data object.
+ * @param {Array} dataOriginal.data - An array of performance data.
+ * @param {Array} dataOriginal.kind - An array of performance kinds.
+ * @returns {Array} - The formatted performance data.
+ */                                      
 
   return (
     <div className='radar'>
