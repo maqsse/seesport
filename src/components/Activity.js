@@ -25,7 +25,8 @@ Fetches activity data and sets it in the state.
   
   async function fetchActivityUser () {
     const info = await fetchActivity()
-    setActivity(info)
+    const formatedData = formatActivityData(info.data)
+    setActivity(formatedData)
   } 
   
   /**
@@ -34,6 +35,21 @@ Fetches activity data and sets it in the state.
  * @param {Array} dataOriginal.sessions - An array of activity sessions.
  * @returns {Array} - The formatted activity data.
  */
+  
+  function formatActivityData (dataOriginal) {
+    const { sessions } = dataOriginal
+    const newData = []
+    let date
+    sessions.forEach(sess => {
+      date = new Date(sess.day)
+      newData.push({
+        day: date.getDate(),
+        kilogram: sess.kilogram,
+        calories: sess.calories
+      })
+    })
+      return newData
+    }
   
   return (
     <div className='activity'>
