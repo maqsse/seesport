@@ -20,7 +20,7 @@ const Objectif = () => {
 
   useEffect(() => {
     fetchObjectifUser()
-  }, []) 
+  }) 
 
   /**
    * Fetches the average session duration for the user from an API.
