@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchPerformance } from '../api/Api'
+import { fetchPerformance } from '../api/callApi'
 import { useState, useEffect } from 'react'
 import { Legend, PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts'
 import '../styles/perfradar.css'
@@ -23,9 +23,10 @@ Fetches performance data and sets it in the state.
   
   async function fetchPerformanceUser () {
     const data = await fetchPerformance()
-    setPerformance(data)
+    const dataformated = formatPerformanceData(data.data)
+    setPerformance(dataformated)
   }
-  if (performance.length === 0) return (<></>)
+  
                                         
   /**
  * Formats performance data.
@@ -33,8 +34,30 @@ Fetches performance data and sets it in the state.
  * @param {Array} dataOriginal.data - An array of performance data.
  * @param {Array} dataOriginal.kind - An array of performance kinds.
  * @returns {Array} - The formatted performance data.
- */                                      
+ */     
+ 
+     const translation = {
+  cardio: 'Cardio',
+  energy: 'Energie',
+  endurance: 'Endurance',
+  strength: 'Force',
+  speed: 'Vitesse',
+  intensity: 'Intensité'
+} 
 
+function formatPerformanceData (dataOriginal) {
+  const { data, kind } = dataOriginal
+  const newData = []
+  data.forEach(perf => {
+    newData.push({
+      value: perf.value,
+      kind: translation[kind[perf.kind]]
+    })
+  })
+  return newData
+}                                   
+
+if (performance.length === 0) return (<></>)
   return (
     <div className='radar'>
       <ResponsiveContainer width='100%' height='100%'>
