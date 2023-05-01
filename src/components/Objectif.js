@@ -9,6 +9,10 @@ import { LineChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } f
 /**
  * Render a LineChart with user average sessions Data
  * @return {JSX}
+ * @param  {bool} objectifUser
+ * @param  {array} day
+ * @param { number } sessionLength
+ * 
  */
 
 const Objectif = () => {
@@ -18,10 +22,25 @@ const Objectif = () => {
     fetchObjectifUser()
   }, []) 
 
+  /**
+   * Fetches the average session duration for the user from an API.
+   * @async
+   * @function
+   *
+  * @return {JSX}
+ */
+  
   async function fetchObjectifUser () {
     const info = await fetchAverageSession()
     setObjectifUser(info)
   }
+  
+  /**
+ * Formats session days.
+ * @param {Object} dataOriginal - The original data object.
+ * @param {Array} dataOriginal.sessions - An array of session days.
+ * @returns {Array} - The formatted session days.
+ */
  
   return (
     <div className='objectif'>
