@@ -15,7 +15,7 @@ const Perfradar = () => {
 
   useEffect(() => {
     fetchPerformanceUser()
-  }, [])
+  })
 
   /**
 Fetches performance data and sets it in the state.
