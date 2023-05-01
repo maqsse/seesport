@@ -56,7 +56,7 @@ function formatPerformanceData (dataOriginal) {
   })
   return newData
 }                                   
-
+// Renders an empty component if performance data has not been fetched yet.
 if (performance.length === 0) return (<></>)
   return (
     <div className='radar'>
