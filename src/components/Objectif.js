@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/objectif.css'
-import { fetchAverageSession } from '../api/Api'
+import { fetchAverageSession } from '../api/callApi'
 import { CustomTooltipObjectif } from './Custom'
 import { useState, useEffect } from 'react'
 import { LineChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from 'recharts'
@@ -32,7 +32,8 @@ const Objectif = () => {
   
   async function fetchObjectifUser () {
     const info = await fetchAverageSession()
-    setObjectifUser(info)
+    const formateddata = formatSessionDays(info.data)
+    setObjectifUser(formateddata)
   }
   
   /**
@@ -42,6 +43,28 @@ const Objectif = () => {
  * @returns {Array} - The formatted session days.
  */
  
+  const jour = {
+  1: 'L',
+  2: 'M',
+  3: 'M',
+  4: 'J',
+  5: 'V',
+  6: 'S',
+  7: 'D'
+}
+
+ function formatSessionDays (dataOriginal) {
+  const { sessions } = dataOriginal
+  const newData = []
+  sessions.forEach(sess => {
+    newData.push({
+      day: jour[sess.day],
+      sessionLength: sess.sessionLength
+    })
+  })
+  return newData
+} 
+  
   return (
     <div className='objectif'>
       <h3 className='h3_objectif'> Durée moyenne des sessions </h3>
