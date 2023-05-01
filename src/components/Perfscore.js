@@ -19,7 +19,7 @@ const Perfscore = () => {
 
   useEffect(() => {
     fetchScoreUser()
-  }, [])
+  })
   
   /**
    * Fetches the user's score information.
