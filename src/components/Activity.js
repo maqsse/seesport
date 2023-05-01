@@ -18,10 +18,23 @@ function Activity () {
     fetchActivityUser()
   }, [])
 
+  /**
+Fetches activity data and sets it in the state.
+@returns  - A Promise that resolves when the data is set in the state.
+*/
+  
   async function fetchActivityUser () {
     const info = await fetchActivity()
     setActivity(info)
   } 
+  
+  /**
+ * Formats activity data.
+ * @param {Object} dataOriginal - The original data object.
+ * @param {Array} dataOriginal.sessions - An array of activity sessions.
+ * @returns {Array} - The formatted activity data.
+ */
+  
   return (
     <div className='activity'>
       <h3> Acitivité quotidienne </h3>
