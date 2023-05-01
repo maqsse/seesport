@@ -1,4 +1,4 @@
-const server = 'https://seesport.herokuapp.com/user/12'
+const server = 'https://seesport.netlify.app/user/12'
  
 /**
  * Fetches key data for the current user
