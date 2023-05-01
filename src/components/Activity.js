@@ -53,7 +53,7 @@ Fetches activity data and sets it in the state.
   
   return (
     <div className='activity'>
-      <h3> Acitivité quotidienn </h3>
+      <h3> Acitivité quotidienne </h3>
       <ResponsiveContainer width='100%' height='100%'>
         <BarChart width='50%' height='50%' data={activity}>
           <CartesianGrid strokeDasharray='3 3' vertical={false} />
