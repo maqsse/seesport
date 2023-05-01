@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchActivity } from '../api/Api'
+import { fetchActivity } from '../api/callApi'
 import { CustomTooltipActivity } from './Custom'
 import { useState, useEffect } from 'react'
 import { BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, Bar } from 'recharts'
