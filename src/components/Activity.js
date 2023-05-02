@@ -16,7 +16,7 @@ function Activity () {
 
   useEffect(() => {
     fetchActivityUser()
-  })
+  },[])
 
   /**
 Fetches activity data and sets it in the state.
