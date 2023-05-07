@@ -1,10 +1,8 @@
 import React from 'react'
 import '../styles/objectif.css'
-import { fetchAverageSession } from '../api/callApi'
 import { CustomTooltipObjectif } from './Custom'
-import { useState, useEffect } from 'react'
 import { LineChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } from 'recharts'
-
+import PropTypes from 'prop-types';
 
 /**
  * Render a LineChart with user average sessions Data
@@ -15,55 +13,8 @@ import { LineChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Legend } f
  * 
  */
 
-const Objectif = () => {
-  const [objectifUser, setObjectifUser] = useState([])
-
-  useEffect(() => {
-    fetchObjectifUser()
-  }) 
-
-  /**
-   * Fetches the average session duration for the user from an API.
-   * @async
-   * @function
-   *
-  * @return {JSX}
- */
+const Objectif = ({objectifUser}) => {
   
-  async function fetchObjectifUser () {
-    const info = await fetchAverageSession()
-    const formateddata = formatSessionDays(info.data)
-    setObjectifUser(formateddata)
-  }
-  
-  /**
- * Formats session days.
- * @param {Object} dataOriginal - The original data object.
- * @param {Array} dataOriginal.sessions - An array of session days.
- * @returns {Array} - The formatted session days.
- */
- 
-  const jour = {
-  1: 'L',
-  2: 'M',
-  3: 'M',
-  4: 'J',
-  5: 'V',
-  6: 'S',
-  7: 'D'
-}
-
- function formatSessionDays (dataOriginal) {
-  const { sessions } = dataOriginal
-  const newData = []
-  sessions.forEach(sess => {
-    newData.push({
-      day: jour[sess.day],
-      sessionLength: sess.sessionLength
-    })
-  })
-  return newData
-} 
   
   return (
     <div className='objectif'>
@@ -92,5 +43,9 @@ const Objectif = () => {
     </div>
   )
 }
+Objectif.propTypes = {
+  objectifUser: PropTypes.array.isRequired,
+  setObjectifUser: PropTypes.func.isRequired,
+};
 
 export default Objectif
