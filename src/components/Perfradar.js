@@ -1,7 +1,6 @@
 import React from 'react'
-import { fetchPerformance } from '../api/callApi'
-import { useState, useEffect } from 'react'
 import { Legend, PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts'
+import PropTypes from 'prop-types';
 import '../styles/perfradar.css'
 
 /**
@@ -10,52 +9,8 @@ import '../styles/perfradar.css'
  * @param  {array} performance
  */
 
-const Perfradar = () => {
-  const [performance, setPerformance] = useState([])
-
-  useEffect(() => {
-    fetchPerformanceUser()
-  })
-
-  /**
-Fetches performance data and sets it in the state.
-*/
-  
-  async function fetchPerformanceUser () {
-    const data = await fetchPerformance()
-    const dataformated = formatPerformanceData(data.data)
-    setPerformance(dataformated)
-  }
-  
-                                        
-  /**
- * Formats performance data.
- * @param {Object} dataOriginal - The original data object.
- * @param {Array} dataOriginal.data - An array of performance data.
- * @param {Array} dataOriginal.kind - An array of performance kinds.
- * @returns {Array} - The formatted performance data.
- */     
- 
-     const translation = {
-  cardio: 'Cardio',
-  energy: 'Energie',
-  endurance: 'Endurance',
-  strength: 'Force',
-  speed: 'Vitesse',
-  intensity: 'Intensité'
-} 
-
-function formatPerformanceData (dataOriginal) {
-  const { data, kind } = dataOriginal
-  const newData = []
-  data.forEach(perf => {
-    newData.push({
-      value: perf.value,
-      kind: translation[kind[perf.kind]]
-    })
-  })
-  return newData
-}                                   
+const Perfradar = ({performance}) => {
+      
 // Renders an empty component if performance data has not been fetched yet.
 if (performance.length === 0) return (<></>)
   return (
@@ -71,5 +26,14 @@ if (performance.length === 0) return (<></>)
     </div>
   )
 }
+
+Perfradar.propTypes = {
+  performance: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      kind: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Perfradar
