@@ -11,6 +11,7 @@ import Activity from '../components/Activity'
 import Objectif from '../components/Objectif'
 import Perfradar from '../components/Perfradar'
 import Perfscore from '../components/Perfscore'
+import { fetchScoreUser, fetchPerformanceUser,fetchObjectifUser, fetchActivityUser } from '../service/fetchData'
 import Erreur from '../page/Erreur'
 import '../styles/accueil.css'
 import '../styles/upbar.css'
@@ -42,6 +43,37 @@ function Accueil() {
   } else {
     connexionBdd = false
   }
+const [scoreUser, setScoreUser] = useState([])
+
+   useEffect(() => {
+    async function fetchData() {
+      const data = await fetchScoreUser();
+      setScoreUser(data);
+   }
+   fetchData();});
+
+   const [performance, setPerformance] = useState([])
+
+  useEffect(() => {
+    fetchPerformanceUser(setPerformance);
+  },[setPerformance])
+
+  const [objectifUser, setObjectifUser] = useState([])
+  
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await fetchObjectifUser();
+      setObjectifUser(data);
+    }
+    fetchData();
+  },[]) 
+
+  const [activity, setActivity] = useState([])
+
+  useEffect(() => {
+    fetchActivityUser(setActivity) 
+  },[])
 
 
   return connexionBdd ? (
@@ -62,13 +94,13 @@ function Accueil() {
         <div className="separate_stats">
           <div className="stats">
             <div className="activity_graph">
-              <Activity />
+              <Activity activity={activity} />
             </div>
 
             <div className="graph-objectif">
-              <Objectif />
-              <Perfradar />
-              <Perfscore />
+              <Objectif objectifUser={objectifUser} />
+              <Perfradar performance={performance} />
+              <Perfscore scoreUser={scoreUser} />
             </div>
           </div>
           <div className="information-stat">
