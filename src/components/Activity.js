@@ -1,55 +1,18 @@
 import React from 'react'
-import { fetchActivity } from '../api/callApi'
 import { CustomTooltipActivity } from './Custom'
-import { useState, useEffect } from 'react'
 import { BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, Bar } from 'recharts'
 import '../styles/activity.css'
+import PropTypes from 'prop-types';
 
 /**
  * Render a BarChart with user activity Data
- * @return {JSX}
- */
+ * @return {JSX} The activity component
+ * @param  {array} activity
+  */
 
 
-function Activity () {
-  const [activity, setActivity] = useState([])
-
-  useEffect(() => {
-    fetchActivityUser()
-  })
-
-  /**
-Fetches activity data and sets it in the state.
-@returns  - A Promise that resolves when the data is set in the state.
-*/
-  
-  async function fetchActivityUser () {
-    const info = await fetchActivity()
-    const formatedData = formatActivityData(info.data)
-    setActivity(formatedData)
-  } 
-  
-  /**
- * Formats activity data.
- * @param {Object} dataOriginal - The original data object.
- * @param {Array} dataOriginal.sessions - An array of activity sessions.
- * @returns {Array} - The formatted activity data.
- */
-  
-  function formatActivityData (dataOriginal) {
-    const { sessions } = dataOriginal
-    const newData = []
-    let date
-    sessions.forEach(sess => {
-      date = new Date(sess.day)
-      newData.push({
-        day: date.getDate(),
-        kilogram: sess.kilogram,
-        calories: sess.calories
-      })
-    })
-      return newData
-    }
+function Activity ({activity}) {
+      
   
   return (
     <div className='activity'>
@@ -70,5 +33,9 @@ Fetches activity data and sets it in the state.
     </div>
   )
 }
+
+Activity.propTypes = {
+  activity: PropTypes.array.isRequired,
+};
 
 export default Activity
