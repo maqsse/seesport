@@ -1,4 +1,4 @@
-import { fetchInformationScore, fetchActivity, fetchPerformance, fetchAverageSession} from "../api/callApi";
+import { fetchInformationScore, fetchActivity, fetchPerformance, fetchAverageSession} from "../api/callDataMock";
 import { formatScore, formatActivityData, formatSessionDays, formatPerformanceData } from "./format";
 
  
