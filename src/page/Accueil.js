@@ -50,7 +50,7 @@ const [scoreUser, setScoreUser] = useState([])
       const data = await fetchScoreUser();
       setScoreUser(data);
    }
-   fetchData();});
+   fetchData();},[]);
 
    const [performance, setPerformance] = useState([])
 
