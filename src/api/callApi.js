@@ -1,4 +1,4 @@
-const server = 'https://seesport.netlify.app/user/12'
+const server = 'http://localhost:3000/user/12'
  
 /**
  * Fetches key data for the current user
