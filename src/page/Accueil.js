@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { fetchInformation, fetchInformationUserInfo } from '../api/callDataMock'
+import { fetchInformation, fetchInformationUserInfo } from '../api/callApi'
 import Upbar from '../components/Upbar'
 import Sidebar from '../components/Sidebar'
 import calorie from '../assets/calories.png'
