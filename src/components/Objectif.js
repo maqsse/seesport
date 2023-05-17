@@ -45,7 +45,7 @@ const Objectif = ({objectifUser}) => {
 }
 Objectif.propTypes = {
   objectifUser: PropTypes.array.isRequired,
-  setObjectifUser: PropTypes.func.isRequired,
+  
 };
 
 export default Objectif
