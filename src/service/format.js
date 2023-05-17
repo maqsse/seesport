@@ -101,7 +101,7 @@ export function formatScore (dataOriginal) {
     todayScore: score * 100
   })
   newData.push({
-    userId: data.userId,
+    id: data.id,
     todayScore: 100,
     fill: '#ffffff00'
   })
