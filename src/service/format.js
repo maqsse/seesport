@@ -97,7 +97,7 @@ export function formatScore (dataOriginal) {
   }
   const newData = []
   newData.push({
-    userId: data.userId,
+    id: data.id,
     todayScore: score * 100
   })
   newData.push({
