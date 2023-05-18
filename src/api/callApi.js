@@ -1,4 +1,4 @@
-const server = 'https://seesport.netlify.app/user/12'
+const server = 'https://seesport.netlify.app/user/12?mocked'
  
 /**
  * Fetches key data for the current user
